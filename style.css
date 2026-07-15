@@ -1,0 +1,486 @@
+
+:root {
+  --primary: #c8a15a; /* اللون الذهبي الأساسي */
+  --primary-light: #e2c385; /* ذهبي فاتح للهوفر */
+  --secondary: #16221a; /* أخضر غامق للبطاقات */
+  --bg: #0d140f; 
+  --text: #f5f5f5; /* لون النصوص الفاتح */
+  --text-muted: #b8c2bb; /* لون النصوص الباهتة شوية */
+  --border-color: rgba(200, 161, 90, 0.25); /* لون حدود خفيف بالذهبي */
+
+  --radius: 1rem; /* درجة استدارة الحواف */
+  --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4); /* ظل ناعم */
+
+  --section-spacing: 4rem; /* المسافة بين الأقسام */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* عشان البادينج والبوردر ميزودوش حجم العنصر */
+}
+
+html {
+  scroll-behavior: smooth; /* تمرير ناعم لما نضغط على الروابط الداخلية */
+}
+
+body {
+  font-family: "Cairo", sans-serif; /* خط Cairo من جوجل */
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ----------------------------------------------------
+   3) كلاسات عامة قابلة لإعادة الاستخدام
+---------------------------------------------------- */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.btn-main {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--bg);
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 3rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease; /* انتقال ناعم لكل التغييرات عند الهوفر */
+}
+
+.btn-main:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-0.2rem); /* البطن بيرتفع شوية عند الهوفر */
+}
+
+/* ----------------------------------------------------
+   4) Header Section
+---------------------------------------------------- */
+.site-header {
+  position: sticky; /* الهيدر بيفضل ثابت فوق وانت بتعمل سكرول */
+  top: 0;
+  z-index: 100;
+  background-color: rgba(13, 20, 15, 0.9);
+  backdrop-filter: blur(0.5rem); /* تأثير زجاجي بسيط */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* اللوجو يمين والتليفون شمال (في RTL) */
+  padding: 1rem 1.2rem;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.cafe-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.cafe-slogan {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.phone-btn {
+  background-color: var(--primary);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.phone-btn:hover {
+  background-color: var(--primary-light);
+}
+
+/* ----------------------------------------------------
+   5) Hero Section
+---------------------------------------------------- */
+.hero-section {
+  padding: 3rem 1.2rem;
+  text-align: center;
+}
+
+.hero-image-box {
+  margin: 0 auto 1.5rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%; /* شكل دائري للصورة */
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border-color);
+}
+
+.hero-img-placeholder {
+  font-size: 5rem; /* أيقونة الشاي بدل الصورة لحد ما تتحط صورة حقيقية */
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ----------------------------------------------------
+   6) Categories Section
+---------------------------------------------------- */
+.categories-section {
+  padding: 2rem 1.2rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* عمودين في الموبايل */
+  gap: 1rem;
+}
+
+.category-card {
+  background-color: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.2rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-0.3rem); /* بترتفع شوية لفوق عند الهوفر */
+  border-color: var(--primary);
+}
+
+.category-icon {
+  font-size: 1.8rem;
+}
+
+.category-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   7) Menu Sections (الساخنة / الباردة / العصائر / الشيك / السموزي)
+   كلهم بيشتركوا في نفس التنسيق
+---------------------------------------------------- */
+.menu-section {
+  padding: 2.5rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* عمودين في الموبايل */
+  gap: 1rem;
+}
+
+.menu-card {
+  background-color: var(--secondary);
+  border-radius: var(--radius);
+  padding: 1.2rem 0.8rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.menu-card:hover {
+  transform: translateY(-0.4rem) scale(1.02); /* تكبير بسيط وارتفاع عند الهوفر */
+  border-color: var(--primary);
+}
+
+.menu-img-placeholder {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.menu-item-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.menu-item-price {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   8) About Section
+---------------------------------------------------- */
+.about-section {
+  padding: 2.5rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  color: var(--text-muted);
+  max-width: 40rem;
+}
+
+.about-image-box {
+  width: 100%;
+  max-width: 25rem;
+  height: 12rem;
+  background-color: var(--secondary);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.about-img-placeholder {
+  font-size: 3rem;
+}
+
+/* ----------------------------------------------------
+   9) Contact Section
+---------------------------------------------------- */
+.contact-section {
+  padding: 2.5rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--secondary);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  transition: border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.contact-item:hover {
+  border-color: var(--primary);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary);
+  transform: translateY(-0.2rem);
+}
+
+/* ----------------------------------------------------
+   10) Footer Section
+---------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--secondary);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-logo .cafe-name {
+  font-size: 1.3rem;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ====================================================
+   Responsive Breakpoints
+   بنستخدم Mobile First يعني التنسيق الأساسي للموبايل
+   وبعدين بنزود تفاصيل للشاشات الأكبر
+==================================================== */
+
+/* الشاشات من 375px (موبايل كبير) */
+@media (min-width: 375px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* التابلت من 768px */
+@media (min-width: 768px) {
+  .header-container {
+    padding: 1.2rem 3rem;
+  }
+
+  .hero-section {
+    padding: 4rem 3rem;
+  }
+
+  .hero-image-box {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .hero-img-placeholder {
+    font-size: 6rem;
+  }
+
+  .categories-section,
+  .menu-section,
+  .about-section,
+  .contact-section {
+    padding: 3rem 3rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(5, 1fr); /* خمس بطاقات جنب بعض */
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* ثلاث بطاقات في الصف */
+  }
+
+  .about-content {
+    flex-direction: row; /* النص جنب الصورة بدل فوق بعض */
+    text-align: right;
+    gap: 2.5rem;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-image-box {
+    flex: 1;
+    height: 16rem;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    flex: 1;
+    min-width: 14rem;
+  }
+}
+
+/* شاشات الديسكتوب من 1024px */
+@media (min-width: 1024px) {
+  .header-container,
+  .hero-section,
+  .categories-section,
+  .menu-section,
+  .about-section,
+  .contact-section {
+    max-width: 75rem; /* تحديد عرض أقصى للمحتوى عشان ميتمططش */
+    margin: 0 auto;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr); /* أربع بطاقات في الصف */
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-0.5rem) scale(1.03);
+  }
+}
